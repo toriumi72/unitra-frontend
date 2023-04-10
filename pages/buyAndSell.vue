@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="flex justify-center items-center">
     itemList
   </div>
   <div>

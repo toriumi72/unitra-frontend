@@ -6,6 +6,9 @@
   <div>
     setting
   </div>
+  <div>
+    <NuxtPage />
+  </div>
 </template>
 
 <style scoped>

@@ -4,10 +4,7 @@
 
 <template>
   <div>
-    like
-  </div>
-  <div>
-    <NuxtPage />
+
   </div>
 </template>
 

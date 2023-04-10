@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "image_url": "https://example.com/images/physics-textbook.jpg",
+    "name": "物理学の教科書",
+    "price": 3000,
+    "publication_year": 2018,
+    "used_class": "物理入門",
+    "condition": "良好",
+    "negotiable": true,
+    "tags": ["物理"],
+    "description": "基本的な物理学の概念と法則を学ぶための教科書。"
+  },
+  {
+    "id": 2,
+    "image_url": "https://example.com/images/mathematics-textbook.jpg",
+    "name": "数学の教科書",
+    "price": 2500,
+    "publication_year": 2019,
+    "used_class": "数学入門",
+    "condition": "ほぼ新品",
+    "negotiable": false,
+    "tags": ["数学"],
+    "description": "数学の基本的な概念と演算を網羅した教科書。"
+  },
+  {
+    "id": 3,
+    "image_url": "https://example.com/images/history-textbook.jpg",
+    "name": "日本史の教科書",
+    "price": 2000,
+    "publication_year": 2017,
+    "used_class": "日本史",
+    "condition": "中古",
+    "negotiable": true,
+    "tags": ["歴史"],
+    "description": "日本史の主要な出来事と人物を網羅した教科書。"
+  },
+  {
+    "id": 4,
+    "image_url": "https://example.com/images/programming-textbook.jpg",
+    "name": "プログラミングの教科書",
+    "price": 3500,
+    "publication_year": 2020,
+    "used_class": "プログラミング入門",
+    "condition": "良好",
+    "negotiable": false,
+    "tags": ["プログラミング", "物理"],
+    "description": "プログラミングの基本的な概念と、物理シミュレーションの実装方法を学ぶための教科書。"
+  },
+  {
+    "id": 5,
+    "image_url": "https://example.com/images/advanced-mathematics-textbook.jpg",
+    "name": "応用数学の教科書",
+    "price": 4000,
+    "publication_year": 2016,
+    "used_class": "応用数学",
+    "condition": "中古",
+    "negotiable": true,
+    "tags": ["数学", "プログラミング"],
+    "description": "応用数学の概念と、プログラミングでの応用方法を学ぶための教科書。"
+  },
+  {
+    "id": 6,
+    "image_url": "https://example.com/images/world-history-textbook.jpg",
+    "name": "世界史の教科書",
+    "price": 2200,
+    "publication_year": 2015,
+    "used_class": "世界史",
+    "condition": "中古",
+    "negotiable": true,
+    "tags": ["歴史"],
+    "description": "世界史の主要な出来事と文化を網羅した教科書。"
+  },
+  {
+    "id": 7,
+    "image_url": "https://example.com/images/computer-science-textbook.jpg",
+    "name": "コンピュータサイエンスの教科書",
+    "price": 4500,
+    "publication_year": 2021,
+    "used_class": "コンピュータサイエンス",
+    "condition": "良好",
+    "negotiable": false,
+    "tags": ["プログラミング"],
+    "description": "コンピュータサイエンスの基本的な概念と技術を学ぶための教科書。"
+  },
+  {
+    "id": 8,
+    "image_url": "https://example.com/images/quantum-physics-textbook.jpg",
+    "name": "量子物理学の教科書",
+    "price": 5500,
+    "publication_year": 2018,
+    "used_class": "量子物理学",
+    "condition": "中古",
+    "negotiable": true,
+    "tags": ["物理"],
+    "description": "量子物理学の基本的な概念と法則を学ぶための教科書。"
+  },
+  {
+    "id": 9,
+    "image_url": "https://example.com/images/statistics-textbook.jpg",
+    "name": "統計学の教科書",
+    "price": 3000,
+    "publication_year": 2019,
+    "used_class": "統計学",
+    "condition": "良好",
+    "negotiable": false,
+    "tags": ["数学", "プログラミング"],
+    "description": "統計学の基本的な概念と、プログラミングでの実装方法を学ぶための教科書。"
+  },
+  {
+    "id": 10,
+    "image_url": "https://example.com/images/algorithms-textbook.jpg",
+    "name": "アルゴリズムの教科書",
+    "price": 3800,
+    "publication_year": 2020,
+    "used_class": "アルゴリズム",
+    "condition": "ほぼ新品",
+    "negotiable": true,
+    "tags": ["プログラミング"],
+    "description": "アルゴリズムの基本的な概念と、プログラミングでの実装方法を学ぶための教科書。"
+  }
+]
