@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle';
-import goodsArr from '~/goodsList.json';
 
 register();
 
-const goodsList:any = ref(goodsArr);
 const tabArr = ref([
   "全て",
   "プログラミング",
@@ -56,11 +54,9 @@ const onSlideTo = (e:any) => {
       class="bg-[#EFF0F0]"
     >
       <swiper-slide v-for="(tab, index) of tabArr">
-        <ListGoods class="mx-auto container px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-          <button v-for="goodsItem of goodsList">
-            <ItemGoods :goodsItem="goodsItem" />
-          </button>
-        </ListGoods>
+        <div class="w-full px-4">
+          <slot />
+        </div>
       </swiper-slide>
     </swiper-container>
   </div>
