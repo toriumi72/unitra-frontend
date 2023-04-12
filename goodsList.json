@@ -1,4 +1,5 @@
-[
+{
+  "arr":[
   {
     "id": 1,
     "image_url": "https://example.com/images/physics-textbook.jpg",
@@ -119,4 +120,4 @@
     "tags": ["プログラミング"],
     "description": "アルゴリズムの基本的な概念と、プログラミングでの実装方法を学ぶための教科書。"
   }
-]
+]}
