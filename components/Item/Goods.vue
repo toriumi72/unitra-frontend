@@ -16,10 +16,6 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const addToCart = () => {
-  // カートへの追加処理を実装する
-  console.log(`Product ${props.goodsItem.id} added to cart.`);
-}
 </script>
 
 <template>

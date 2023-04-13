@@ -2,7 +2,7 @@
   "arr":[
   {
     "id": 1,
-    "image_url": "https://example.com/images/physics-textbook.jpg",
+    "image_url": "/images/test.png",
     "name": "物理学の教科書",
     "price": 3000,
     "publication_year": 2018,

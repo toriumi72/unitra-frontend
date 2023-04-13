@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <div>
-    <NuxtPage />
+  <div class="bg-white pb-20">
+    <slot />
   </div>
 </template>
 

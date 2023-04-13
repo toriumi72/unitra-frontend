@@ -3,7 +3,6 @@ import { register } from 'swiper/element/bundle';
 import goodsArr from '~/goodsList.json';
 
 register();
-
 const goodsList:any = ref(goodsArr.arr);
 const tabArr = ref([
   "全て",
@@ -45,6 +44,9 @@ const onSlideTo = (e:any) => {
 
 <template>
   <div class="">
+    <div class="flex justify-center items-center pt-3">
+      itemList
+    </div>
     <!-- thumbs swiper -->
     <swiper-container 
       ref="tabs"
