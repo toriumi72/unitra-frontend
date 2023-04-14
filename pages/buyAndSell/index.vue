@@ -85,7 +85,7 @@ const onSlideTo = (e:any) => {
     >
       <swiper-slide>{{ searchName }}</swiper-slide>
       <swiper-slide v-for="(tab, index) of tabArr">
-        <ListGoods class="mx-auto container px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        <ListGoods class="mx-auto container pt-4 px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
           <template v-for="goodsItem of goodsList">
             <button v-if="tab === '全て' || goodsItem.tags.some((tag:any) => tag === tab)" @click="navigateTo(`/buyAndSell/${goodsItem.id}`)">
               <ItemGoods :goodsItem="goodsItem" />

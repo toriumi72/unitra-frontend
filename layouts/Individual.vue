@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-white pb-20">
+  <div class="bg-white">
     <slot />
   </div>
 </template>

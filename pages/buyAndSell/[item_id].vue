@@ -18,11 +18,11 @@ const onGoBack = () => {
 </script>
 
 <template>
-  <ClientOnly>
-    <div class=" ">
+  <!-- <ClientOnly> -->
+    <div class="h-screen w-full">
       <!-- 商品画像 -->
-      <div class="">
-        <div class="sticky inset-0 h-2/5 w-full">
+      <div class="sticky inset-0">
+        <div class="h-2/5 w-full">
           <img class="w-full h-full object-cover" src="/images/test.png" :alt="item.name" />
         </div>
         <!-- ＊ボタンバグってて、ホットリロードの時しか前面に来ない（透明なだけか？レンダリングの順序的な問題か（画像だから）？） -->
@@ -35,7 +35,7 @@ const onGoBack = () => {
       </div>
 
       <!-- 商品詳細 -->
-      <div class=" h-auto mt-[-8px] p-4 flex flex-col bg-white rounded-lg">
+      <div class="h-auto mt-[-8px] p-4 flex flex-col bg-white rounded-lg">
         <div class="text-2xl font-semibold mb-2">{{ item.name }}</div>
         <div class="mb-4 flex flex-wrap space-x-2">
           <span
@@ -49,18 +49,51 @@ const onGoBack = () => {
         <div class="mb-4">
           <span class="text-lg font-semibold">{{ item.price }}円</span>
         </div>
-        <div class="mb-4">出版年: {{ item.publishedYear }}</div>
-        <div class="mb-4">{{ item.description }}</div>
-
-        <!-- 取引へのボタン -->
-        <div class="mt-auto">
-          <ButtonAction class="w-full bg-black text-white">
-            取引へ
-          </ButtonAction>
+        <div class="mb-6 space-y-4">
+          <div class="">出品者: {{ item.seller }}</div>
+          <div class="">{{ item.description }}</div>
+          <div class="">出版年: {{ item.publication_year }}</div>
+          <div class="">使用年: {{ item.used_in_class }}</div>
+          <div class="">状態: {{ item.condition }}</div>
+          <div v-if="item.negotiable === true" class="">交渉: 可</div>
+          <div v-else class="">交渉: 不可</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
+          <div>a</div>
         </div>
+
+
+      </div>
+      <!-- 取引へのボタン -->
+      <div class="fixed bottom-0 left-0 flex justify-center mt-auto p-4 w-full">
+        <ButtonAction class="w-full bg-black text-white shadow-md">
+          取引へ
+        </ButtonAction>
       </div>
     </div>
-  </ClientOnly>
+  <!-- </ClientOnly> -->
 </template>
 
 
