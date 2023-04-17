@@ -12,6 +12,7 @@ onMounted(() => {
   
 })
 
+//戻るボタン
 const onGoBack = () => {
   window.history.back() 
 }
@@ -25,7 +26,6 @@ const onGoBack = () => {
         <div class="h-2/5 w-full">
           <img class="w-full h-full object-cover" src="/images/test.png" :alt="item.name" />
         </div>
-        <!-- ＊ボタンバグってて、ホットリロードの時しか前面に来ない（透明なだけか？レンダリングの順序的な問題か（画像だから）？） -->
         <button
           @click="onGoBack"
           class="absolute top-4 right-4 w-[3em] h-[3em] bg-white rounded-full shadow-md"
