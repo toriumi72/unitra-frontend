@@ -7,6 +7,24 @@ const messages = reactive([
   { sender: 'user1', content: 'こんにちは！' },
   { sender: 'user2', content: 'こんにちは、元気ですか？' },
   { sender: 'user1', content: '元気です！ありがとう！' },
+  { sender: 'user1', content: 'こんにちは！' },
+  { sender: 'user2', content: 'こんにちは、元気ですか？' },
+  { sender: 'user1', content: '元気です！ありがとう！' },
+  { sender: 'user1', content: 'こんにちは！' },
+  { sender: 'user2', content: 'こんにちは、元気ですか？' },
+  { sender: 'user1', content: '元気です！ありがとう！' },
+  { sender: 'user1', content: 'こんにちは！' },
+  { sender: 'user2', content: 'こんにちは、元気ですか？' },
+  { sender: 'user1', content: '元気です！ありがとう！' },
+  { sender: 'user1', content: 'こんにちは！' },
+  { sender: 'user2', content: 'こんにちは、元気ですか？' },
+  { sender: 'user1', content: '元気です！ありがとう！' },
+  { sender: 'user1', content: 'こんにちは！' },
+  { sender: 'user2', content: 'こんにちは、元気ですか？' },
+  { sender: 'user1', content: '元気です！ありがとう！' },
+  { sender: 'user1', content: 'こんにちは！' },
+  { sender: 'user2', content: 'こんにちは、元気ですか？' },
+  { sender: 'user1', content: '元気です！ありがとう！' },
 ])
 
 const inputMessage = ref('')
@@ -35,8 +53,8 @@ const onGoBack = () => {
 </script>
 
 <template>
-  <div class="flex flex-col h-screen">
-    <div class="sticky top-0 left-0 px-4 py-1 flex justify-between items-center w-full h-auto bg-white z-30">
+  <div class="flex flex-col">
+    <div class="sticky top-0 left-0 px-4 py-1 flex justify-between items-center w-full h-auto bg-white/50 z-30">
       <div class="">
         <button
           @click="onGoBack"
@@ -54,7 +72,7 @@ const onGoBack = () => {
         </ButtonAction>
       </div>
     </div>
-    <div class="h-full overflow-y-auto p-4 pb-28">
+    <div class="h-auto overflow-y-auto p-4 pb-28">
       <div v-for="(message, index) in messages" :key="index" class="mb-4">
         <div class="flex items-center justify-start gap-1" :class="{'justify-end': message.sender === 'user1'} ">
           <ItemAvatar photoURL="" v-if="message.sender !== 'user1'" class="text-xs" />
