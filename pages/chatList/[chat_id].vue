@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//*scrollバグってる
 definePageMeta({ layout: 'individual' })
 const route = useRoute()
 const chatId = ref(route.params.chat_id)
@@ -28,7 +29,7 @@ const messages = reactive([
 ])
 
 const inputMessage = ref('')
-const sendMessage = () => {
+const onSendMessage = () => {
   if (inputMessage.value.trim()) {
     messages.push({ sender: 'user1', content: inputMessage.value.trim() })
     inputMessage.value = ''
@@ -36,11 +37,18 @@ const sendMessage = () => {
   }
 }
 
+
 const messagesEnd = ref(null)
+
 const scrollToBottom = () => {
   messagesEnd.value.scrollIntoView({ behavior: 'smooth' })
-  console.log('scroll')
 }
+// const scrollToBottom = () => {
+//   const container = document.querySelector('.overflow-y-auto')
+//   if (container) {
+//     container.scrollTop = container.scrollHeight
+//   }
+// }
 
 onMounted(() => {
   scrollToBottom()
@@ -82,6 +90,7 @@ const onGoBack = () => {
               'bg-[#6B4EFF] text-white': message.sender === 'user1',
               'bg-gray-300': message.sender !== 'user1',
             }"
+            
           >
             {{ message.content }}
           </div>
@@ -90,7 +99,7 @@ const onGoBack = () => {
       <div ref="messagesEnd"></div>
     </div>
     <div class="fixed bottom-0 left-0 w-full p-4 border-t border-gray-200 bg-white ">
-      <form @submit.prevent="sendMessage" class="flex items-center">
+      <form @submit.prevent="onSendMessage" class="flex items-center">
         <input
           type="text"
           v-model="inputMessage"

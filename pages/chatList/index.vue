@@ -1,66 +1,34 @@
 <script setup lang="ts">
-const chatList = ref([
-  {
-    "id": 1,
-    "name": "Alice"
-  },
-  {
-    "id": 2,
-    "name": "Bob"
-  },
-  {
-    "id": 3,
-    "name": "Carol"
-  },
-  {
-    "id": 4,
-    "name": "David"
-  },
-  {
-    "id": 5,
-    "name": "Eve"
-  },
-  {
-    "id": 6,
-    "name": "Frank"
-  },
-  {
-    "id": 7,
-    "name": "Grace"
-  },
-  {
-    "id": 8,
-    "name": "Hank"
-  },
-  {
-    "id": 9,
-    "name": "Ivy"
-  },
-  {
-    "id": 10,
-    "name": "Jack"
-  }
-])
+import chatArr from '~/chatList.json'
+const chatList: any = ref(chatArr.arr)
 
-
+const router = useRouter()
 </script>
 
 <template>
-  <div>
-    chatList
-  </div>
-  <div v-for="(chatItem, index) of chatList">
-    <button @click="navigateTo(`/chatList/${chatItem.id}`)" class="flex gap-6">
-      <div>
-        {{ chatItem.id }}
+  <div class="">
+    <div class="mx-auto">
+      <div class="text-2xl font-bold mb-6">チャット一覧</div>
+      <div v-for="(chatItem, index) in chatList" :key="index" class="">
+        <button
+          @click="navigateTo(`/chatList/${chatItem.id}`)"
+          class="flex items-center gap-3 py-3 px-4 w-full"
+        >
+          <ItemAvatar photoURL="" class="text-sm" />
+          <div class="flex flex-col text-left">
+            <div class="">
+              {{ chatItem.name }}
+            </div>
+            <div class="text-xs">
+              {{ chatItem.lastMessage }}
+            </div>
+          </div>
+        </button>
       </div>
-      <div>
-        {{ chatItem.name }}
-      </div>
-    </button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-
 </style>
+
