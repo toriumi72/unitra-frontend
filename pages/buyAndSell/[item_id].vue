@@ -88,7 +88,7 @@ const onGoBack = () => {
       </div>
       <!-- 取引へのボタン -->
       <div class="fixed bottom-0 left-0 flex justify-center mt-auto p-4 w-full">
-        <ButtonAction class="w-full bg-black text-white shadow-md">
+        <ButtonAction class="p-[0.8em] w-full bg-black text-white shadow-md">
           取引へ
         </ButtonAction>
       </div>

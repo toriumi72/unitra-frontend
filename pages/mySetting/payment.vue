@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <NuxtPage />
+    payment
   </div>
 </template>
 

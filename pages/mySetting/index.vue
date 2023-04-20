@@ -1,10 +1,73 @@
 <script setup lang="ts">
+import profile from '~/profile.json'
+
+const profileData: any = ref(profile)
+
+const buttonList = ref([
+  {
+    name: "購入履歴",
+    icon: "system-uicons:files-history",
+    root: "history",
+  },
+  {
+    name: "支払い方法",
+    icon: "fluent:payment-24-regular",
+    root: "payment",
+  },
+  {
+    name: "設定",
+    icon: "solar:settings-linear",
+    root: "setting",
+  },
+  {
+    name: "ヘルプ",
+    icon: "material-symbols:help-outline-rounded",
+    root: "help",
+  },
+])
 
 </script>
 
 <template>
-  <div>
-
+  <div class="p-4">
+    <div class="mb-5">
+      <button
+        @click="navigateTo(``)"
+        class="flex items-center gap-3 w-full"
+      >
+        <ItemAvatar photoURL="" class="text-lg" />
+        <div class="flex flex-col text-left">
+          <div class="text-lg">
+            {{ profileData.userName }}
+          </div>
+          <div class="text-xs">
+            {{ profileData.university }}
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="mb-2">
+      <ButtonAction @click="navigateTo(`mySetting/profile`)" class="p-[0.8em] w-full bg-[#E7E7FF] text-[#6B4EFF] text-sm">
+        View Profile
+      </ButtonAction>
+    </div>
+    <div>
+      <div v-for="(buttonItem, index) of buttonList" class="">
+        <button @click="navigateTo(`mySetting/${buttonItem.root}`)" class="flex gap-2 items-center py-4 w-full">
+          <div>
+            <BlockIcon :name="buttonItem.icon" class="text-xl" />
+          </div>
+          <div class="">
+            {{ buttonItem.name }}
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="">
+      <button class="py-4 w-full">
+        logout
+      </button>
+    </div>
   </div>
 </template>
 

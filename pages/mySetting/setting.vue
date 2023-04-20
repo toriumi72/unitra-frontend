@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <NuxtPage />
+    setting
   </div>
 </template>
 

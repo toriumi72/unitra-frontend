@@ -75,7 +75,7 @@ const onGoBack = () => {
         {{ chatId }}
       </div>
       <div>
-        <ButtonAction class="bg-black text-white shadow-md text-sm">
+        <ButtonAction class="p-[0.5em] w-full bg-black text-white shadow-md text-sm">
           お支払い方法選択 →
         </ButtonAction>
       </div>

@@ -37,7 +37,7 @@ const localNavArray = ref([
 
 <template>
   <div class="fixed bottom-0 left-0 w-full h-auto z-[99]">
-    <div class="flex px-3 py-2 items-center shadow bg-white">
+    <div class="flex px-3 pt-2 pb-5 items-center shadow bg-white">
       <div class="grow flex items-center">
 
         <div class="absolute left-1/2 flex items-center justify-center h-12 w-12 -top-4 -translate-x-1/2 rounded-3xl bg-indigo-500 text-white shadow-lg sm:-top-8 sm:h-16 sm:w-16">
@@ -45,7 +45,7 @@ const localNavArray = ref([
         </div>
 
         <button v-for="(localNav, index) of localNavArray" @click="navigateTo('/' + localNav.slack)" class="basis-1/5 py-[calc(0.2vh_+_6px)]">
-          <div class="text-[calc(2vh_+_8px)] leading-none text-[#B0A6CC]" :class="{ 'text-[#6B4EFF]': route.path === '/' + localNav.slack }">
+          <div class="text-[calc(2vh_+_8px)] leading-none" :class="{ 'text-[#6B4EFF]': route.path === '/' + localNav.slack }">
             <BlockIcon v-show="route.path === '/' + localNav.slack" :name="localNav.selectedIcon" class="text-light"/>
             <BlockIcon v-show="route.path !== '/' + localNav.slack" :name="localNav.icon" class="text-light"/>
           </div>

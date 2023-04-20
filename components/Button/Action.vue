@@ -6,7 +6,7 @@
 </script>
 <template>
   <button class="rounded-full overflow-hidden">
-    <div class="p-[0.8em] flex items-center justify-center">
+    <div class=" flex items-center justify-center">
       <slot />
       <!-- <BlockIcon :name="props.icon" class="ml-1 w-[1.5em] h-[1.5em]" /> -->
     </div>

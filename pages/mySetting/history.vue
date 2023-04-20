@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <NuxtPage />
+    購入履歴
   </div>
 </template>
 

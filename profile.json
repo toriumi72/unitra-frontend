@@ -1,0 +1,22 @@
+{
+  "userName": "鳥海 翔英",
+
+  "profileImage": "https://via.placeholder.com/150",
+  "selfIntroduction": "こんにちは、私はJohn Doeです。",
+  "university": "東京大学 理科三類",
+  "purchasedBooks": [
+    {
+      "title": "教科書1"
+    },
+    {
+      "title": "教科書2"
+    }
+  ],
+  "purchaseHistory": [
+    {
+      "partner": "Partner 1",
+      "date": "2023-04-01",
+      "amount": "¥5000"
+    }
+  ]
+}

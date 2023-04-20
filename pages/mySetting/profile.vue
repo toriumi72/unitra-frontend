@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <NuxtPage />
+    profile
   </div>
 </template>
 
