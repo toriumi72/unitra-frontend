@@ -1,5 +1,20 @@
 <script setup lang="ts">
 import profile from '~/profile.json'
+const {
+  getTest,
+} = useStore()
+
+const userData = ref<any>(null)
+onMounted(() => {
+  getUserData()
+  .then((res: any) => {
+    userData.value = res
+    console.log(res)
+  })
+  .catch((err: any) => {
+    console.log(err)
+  })
+})
 
 const profileData: any = ref(profile)
 
@@ -36,9 +51,9 @@ const buttonList = ref([
         class="flex items-center gap-3 w-full"
       >
         <ItemAvatar photoURL="" class="text-lg" />
-        <div class="flex flex-col text-left">
+        <div v-if="test" class="flex flex-col text-left">
           <div class="text-lg">
-            {{ profileData.userName }}
+            {{ test.name }}
           </div>
           <div class="text-xs">
             {{ profileData.university }}
