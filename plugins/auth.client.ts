@@ -24,4 +24,23 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.provide('fireStore', getFirestore(app))
   nuxtApp.provide('fireStorage', getStorage(app))
   nuxtApp.provide('fireFunctions', getFunctions(app))
+
+  /** auth state observer */
+  onAuthStateChanged(auth, (user) => {
+    const { setFireAuthInCurrentUser, loggedInUser } = useAuth()
+    if (user) {
+      user.getIdTokenResult(true)
+      .then((idTokenResult) => {
+        console.log('logged in')
+        setFireAuthInCurrentUser(user)
+        navigateTo('/buyAndSell')
+        // needRegister.value = true
+      })
+    }
+    else {
+      loggedInUser.value = null
+      console.log('not logged in')
+      navigateTo('/login', { replace: true })
+    }
+  })
 })

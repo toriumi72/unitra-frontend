@@ -1,8 +1,20 @@
 <script setup lang="ts">
-
+const { loggedInUser } = useAuth()
+const { $fireAuth } = useNuxtApp()
+console.log($fireAuth,"$fireAuth")
+console.log(loggedInUser.value,"loggedInUser")
 </script>
 <template>
   <div>
+    <!-- <template v-if="loggedInUser">
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </template>
+    <template v-else>
+      <Login />
+      logged{{ loggedInUser }}
+    </template> -->
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

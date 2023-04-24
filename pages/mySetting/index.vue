@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import profile from '~/profile.json'
 const {
-  getTest,
+  getUserData,
 } = useStore()
+const {
+  loggedInUser,
+  signOut,
+} = useAuth()
 
 const userData = ref<any>(null)
 onMounted(() => {
@@ -14,7 +18,18 @@ onMounted(() => {
   .catch((err: any) => {
     console.log(err)
   })
+  console.log(loggedInUser.value)
 })
+
+const onSignOut = async () => {
+  try {
+    await signOut()
+    alert("ログアウトしました")
+  } catch (error) {
+    console.log(error)
+    console.log("error")
+  }
+}
 
 const profileData: any = ref(profile)
 
@@ -47,13 +62,13 @@ const buttonList = ref([
   <div class="p-4">
     <div class="mb-5">
       <button
-        @click="navigateTo(``)"
+        @click="navigateTo(`mySetting/profile`)"
         class="flex items-center gap-3 w-full"
       >
         <ItemAvatar photoURL="" class="text-lg" />
-        <div v-if="test" class="flex flex-col text-left">
+        <div v-if="loggedInUser" class="flex flex-col text-left">
           <div class="text-lg">
-            {{ test.name }}
+            {{ loggedInUser.uid }}
           </div>
           <div class="text-xs">
             {{ profileData.university }}
@@ -79,7 +94,7 @@ const buttonList = ref([
       </div>
     </div>
     <div class="">
-      <button class="py-4 w-full">
+      <button @click="onSignOut" class="py-4 w-full">
         logout
       </button>
     </div>

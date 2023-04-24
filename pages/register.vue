@@ -1,13 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
-	middleware: ['auth'],
+  layout: 'individual',
 })
 </script>
 
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+  <Register />
 </template>
 
 <style scoped>
