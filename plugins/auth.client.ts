@@ -27,12 +27,15 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   /** auth state observer */
   onAuthStateChanged(auth, (user) => {
-    const { setFireAuthInCurrentUser, loggedInUser } = useAuth()
+    const { 
+      setFireAuthInCurrentUser, 
+      loggedInUser,
+    } = useAuth()
     if (user) {
       user.getIdTokenResult(true)
       .then((idTokenResult) => {
         console.log('logged in')
-        setFireAuthInCurrentUser(user)
+        setFireAuthInCurrentUser(user) 
         navigateTo('/buyAndSell')
         // needRegister.value = true
       })

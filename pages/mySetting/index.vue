@@ -1,25 +1,15 @@
 <script setup lang="ts">
 import profile from '~/profile.json'
 const {
-  getUserData,
+  getProfile,
+  addProfile,
+  updateProfile,
 } = useStore()
 const {
   loggedInUser,
+  userProfile,
   signOut,
 } = useAuth()
-
-const userData = ref<any>(null)
-onMounted(() => {
-  getUserData()
-  .then((res: any) => {
-    userData.value = res
-    console.log(res)
-  })
-  .catch((err: any) => {
-    console.log(err)
-  })
-  console.log(loggedInUser.value)
-})
 
 const onSignOut = async () => {
   try {
@@ -31,7 +21,7 @@ const onSignOut = async () => {
   }
 }
 
-const profileData: any = ref(profile)
+const profileData: any = ref(null)
 
 const buttonList = ref([
   {
@@ -68,10 +58,10 @@ const buttonList = ref([
         <ItemAvatar photoURL="" class="text-lg" />
         <div v-if="loggedInUser" class="flex flex-col text-left">
           <div class="text-lg">
-            {{ loggedInUser.uid }}
+            {{ userProfile?.displayName }}
           </div>
           <div class="text-xs">
-            {{ profileData.university }}
+            {{ userProfile?.university }}
           </div>
         </div>
       </button>

@@ -3,19 +3,21 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut as firebaseSignOut,
-  onAuthStateChanged,
   GoogleAuthProvider, 
   signInWithPopup,
   signInWithRedirect,
 } from 'firebase/auth'
 import type { User, IdTokenResult } from "firebase/auth"
+import type { LoggedInUser, UserProfile } from '@/types'
 
 export const useAuth = () => {
 
   const { $fireAuth } = useNuxtApp()
 
-  const loggedInUser = useState<any>('loggedInUser', () => null)
+  // const loggedInUser = useState<LoggedInUser | null>('loggedInUser', () => null)
+  const loggedInUser = useState<any | null>('loggedInUser', () => null)
   const token = useState<string | null>('token', () => null)
+  const userProfile = useState<any>('userProfile', () => null)
 
   // When onAuthStateChanged runs, it will set the loggedInUser and token
   const setFireAuthInCurrentUser = (user:User) => {
@@ -23,6 +25,7 @@ export const useAuth = () => {
     loggedInUser.value = {
       uid, displayName, photoURL
     }
+    console.log('setFireAuthInCurrentUser')
   }
 
   //google login
@@ -101,6 +104,7 @@ export const useAuth = () => {
     loggedInUser,
     // needRegister,
     token,
+    userProfile,
     setFireAuthInCurrentUser,
     googleLogin,
     signUp,

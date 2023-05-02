@@ -31,12 +31,16 @@ export const useFireStore = () => {
     return Promise.resolve(documentSnapshot)
   }
 
-  const getQuerySnapshot = async (query:Query) => {
-    const querySnapshot = await getDocs(query).catch((e:Error) => Promise.reject(e))
-    if (querySnapshot.empty) {
-      throw new Error("ドキュメントが一つもないよ！")
+  const getQuerySnapshot = async (query: Query) => {
+    try {
+      const querySnapshot = await getDocs(query)
+      if (querySnapshot.empty) {
+        throw new Error("ドキュメントが一つもないよ！")
+      }
+      return Promise.resolve(querySnapshot)
+    } catch (e: any) {
+      throw e
     }
-    return Promise.resolve(querySnapshot)
   }
 
   const voidSetDoc = async (docRef:DocumentReference, data:DocumentData) => {

@@ -1,8 +1,35 @@
 <script setup lang="ts">
-const { loggedInUser } = useAuth()
-const { $fireAuth } = useNuxtApp()
-console.log($fireAuth,"$fireAuth")
-console.log(loggedInUser.value,"loggedInUser")
+const {
+  loggedInUser,
+  userProfile,
+} = useAuth()
+
+const {
+  getProfile,
+  addProfile,
+  updateProfile,
+} = useStore()
+
+watch(loggedInUser, async (newValue) => {
+  console.log("loggedInUser", newValue)
+  if (newValue) {
+    await getProfile(newValue)
+      .then((res) => {
+        if (res) {
+          userProfile.value = null
+          userProfile.value = res
+          console.log("userProfileを取得しました")
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to get profile:", error)
+      })
+  } else {
+    console.log("ログインしてください")
+  }
+})
+
+
 </script>
 <template>
   <div>
