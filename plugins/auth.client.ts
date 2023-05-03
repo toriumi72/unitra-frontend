@@ -34,8 +34,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (user) {
       user.getIdTokenResult(true)
       .then((idTokenResult) => {
-        console.log('logged in')
         setFireAuthInCurrentUser(user) 
+        console.log('logged in')
         navigateTo('/buyAndSell')
         // needRegister.value = true
       })

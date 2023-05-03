@@ -33,18 +33,14 @@ watch(loggedInUser, async (newValue) => {
 </script>
 <template>
   <div>
-    <!-- <template v-if="loggedInUser">
+    <div v-if="userProfile">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-    </template>
-    <template v-else>
-      <Login />
-      logged{{ loggedInUser }}
-    </template> -->
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    </div>
+    <div v-else>
+      <ProfileRegister />
+    </div>
   </div>
 </template>
 <style>

@@ -18,8 +18,8 @@ const onSignUp = async () => {
       console.log("入力してください")
     }
   } catch (error) {
-    console.log(error)
     alert("登録に失敗しました")
+    alert(error)
     console.log("error")
   }
 }

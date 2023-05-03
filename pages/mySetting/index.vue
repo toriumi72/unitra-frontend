@@ -57,11 +57,17 @@ const buttonList = ref([
       >
         <ItemAvatar photoURL="" class="text-lg" />
         <div v-if="loggedInUser" class="flex flex-col text-left">
-          <div class="text-lg">
-            {{ userProfile?.displayName }}
+          <div v-if="userProfile" class="text-lg">
+            {{ userProfile.displayName }}
           </div>
-          <div class="text-xs">
+          <div v-else>
+            No Name
+          </div>
+          <div v-if="userProfile" class="text-xs">
             {{ userProfile?.university }}
+          </div>
+          <div v-else>
+            No University
           </div>
         </div>
       </button>

@@ -17,7 +17,7 @@ export default defineNuxtRouteMiddleware(async () => {
   const { $fireAuth } = useNuxtApp()
 
   if (!$fireAuth.currentUser) {
-    // alert('Not Logged In')
+    alert('Not Logged In')
     return navigateTo('/login', { replace: true })
   }
 })

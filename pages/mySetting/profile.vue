@@ -44,14 +44,11 @@ onMounted(async () => {
     <div>
       {{ profileData }}
     </div>
-    <div v-if="profileData">
-      <input v-model="profileData.displayName" type="text">
-    </div>
-    <div class="bg-gray-100 min-h-screen">
+    <div v-if="profileData"  class="bg-gray-100 min-h-screen">
       <div class="container mx-auto px-4 py-12">
         <h1 class="text-2xl font-bold mb-4">プロフィール編集</h1>
         <div class="bg-white p-6 rounded shadow">
-          <form v-if="profileData" @submit.prevent="onUpdateProfile">
+          <form @submit.prevent="onUpdateProfile">
             <div class="mb-4">
               <label class="block mb-2 text-gray-700">ユーザー名</label>
               <input
@@ -67,6 +64,24 @@ onMounted(async () => {
                 type="email"
                 v-model="profileData.email"
                 placeholder="メールアドレスを入力してください"
+                class="w-full border border-gray-300 p-2 rounded"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-gray-700">大学名</label>
+              <input
+                type="text"
+                v-model="profileData.university"
+                placeholder="大学名を入力してください"
+                class="w-full border border-gray-300 p-2 rounded"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-gray-700">学部名</label>
+              <input
+                type="text"
+                v-model="profileData.faculty"
+                placeholder="学部名を入力してください"
                 class="w-full border border-gray-300 p-2 rounded"
               />
             </div>
@@ -87,6 +102,9 @@ onMounted(async () => {
           </form>
         </div>
       </div>
+    </div>
+    <div v-else>
+      <ProfileRegister />
     </div>
   </ClientOnly>
 </template>
