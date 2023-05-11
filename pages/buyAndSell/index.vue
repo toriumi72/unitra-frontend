@@ -1,9 +1,28 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle';
-import goodsArr from '~/goodsList.json';
-
 register();
-const goodsList:any = ref(goodsArr.arr);
+const {
+  getBookListRealtime,
+  bookList,
+} = useStore()
+const {
+  loggedInUser,
+  userProfile,
+  signOut,
+} = useAuth()
+
+// const bookList = ref<any[]>([])
+onMounted(async() => {
+  getBookListRealtime(bookList)
+})
+//引数を取らずに何も返さない関数を定義
+let unsubscribe: () => void;
+onUnmounted(() => {
+  if (unsubscribe) {
+    console.log("unsubscribe")
+    unsubscribe()
+  }
+})
 const tabArr = ref([
   "全て",
   "プログラミング",
@@ -40,9 +59,13 @@ const focusInput = (event:any) => {
 const onSlideTo = (e:any) => {
   e.detail[0].slideTo(e.detail[0].clickedIndex - 1, 500, true)
 }
+
 </script>
 
 <template>
+  <div>
+    {{ bookList }}
+  </div>
   <div class="">
     <div class="flex justify-center items-center pt-3">
       itemList
@@ -85,13 +108,13 @@ const onSlideTo = (e:any) => {
     >
       <swiper-slide>{{ searchName }}</swiper-slide>
       <swiper-slide v-for="(tab, index) of tabArr">
-        <ListGoods class="mx-auto container pt-4 px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-          <template v-for="goodsItem of goodsList">
-            <button v-if="tab === '全て' || goodsItem.tags.some((tag:any) => tag === tab)" @click="navigateTo(`/buyAndSell/${goodsItem.id}`)">
-              <ItemGoods :goodsItem="goodsItem" />
+        <ListBooks class="mx-auto container pt-4 px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+          <template v-for="bookItem of bookList">
+            <button v-if="tab === '全て' || bookItem.tags.some((tag:any) => tag === tab)" @click="navigateTo(`/buyAndSell/${bookItem.id}`)">
+              <ItemBook :bookItem="bookItem" />
             </button>
           </template>
-        </ListGoods>
+        </ListBooks>
       </swiper-slide>
     </swiper-container>
   </div>

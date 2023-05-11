@@ -1,6 +1,6 @@
 <script setup lang="ts">
 type Props = {
-  goodsItem: {
+  bookItem: {
     id: number;
     name: string;
     imageUrl: string;
@@ -29,10 +29,10 @@ const props = defineProps<Props>();
 
 <div class="border rounded-md">
   <div class="h-52 overflow-hidden bg-gray-100">
-    <img :src="props.goodsItem.imageUrl" class="h-full w-full object-cover object-center" />
+    <img :src="props.bookItem.imageUrl" class="h-full w-full object-cover object-center" />
     <div class="absolute left-0 bottom-0 px-3 py-1.5 text-sm rounded-tr-lg bg-black/80">
       <div class="text-white">
-        {{ props.goodsItem.price }}円
+        {{ props.bookItem.price }}円
       </div>
     </div>
     <div class="absolute right-0 top-0 z-30">
@@ -43,7 +43,7 @@ const props = defineProps<Props>();
   </div>
   <div>
     <div class="p-2 text-left text-sm whitespace-nowrap overflow-hidden overflow-ellipsis">
-      {{ props.goodsItem.name }}
+      {{ props.bookItem.name }}
     </div>
   </div>
 </div>
