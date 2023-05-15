@@ -53,8 +53,8 @@ body * {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1s ease;
-  transition-delay: 2s;
+  transition: opacity 0s ease;
+  transition-delay: 0s;
 }
 
 .v-enter-from,

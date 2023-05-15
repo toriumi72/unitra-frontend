@@ -111,8 +111,6 @@ const onAddBookItem = () => {
       </div>
     </div>
   </div>
-  
-  <SwipeMenu />
 </template>
 
 <style scoped>
