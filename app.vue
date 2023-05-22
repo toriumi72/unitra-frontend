@@ -33,6 +33,7 @@ watch(loggedInUser, async (newValue) => {
 </script>
 <template>
   <div>
+    <VitePwaManifest />
     <div>
       <NuxtLayout>
         <NuxtPage />
